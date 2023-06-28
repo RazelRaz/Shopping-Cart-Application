@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="">
 
     
     
@@ -17,7 +17,7 @@
                 <div class="nav_area-logo">
                     <h3>JSCART</h3>
                 </div>
-                <div class="nav_area-cart">
+                <div class="nav_area-cart shopping">
                     <img src="images/grocery-store.png" alt="trolley">
                     <span class="quantity">0</span>
                 </div>
@@ -43,6 +43,7 @@
     <section class="product_area" id="product_area">
         <div class="container">
             <div class="product_area-products">
+                <!-- All Products will be render here -->
                 <div class="product_area-product">
                     <img src="images/jordan3.webp" alt="">
                     <div class="product_area-product-content">
@@ -51,58 +52,25 @@
                         <button>Add To Cart</button>
                     </div>
                 </div>
-                <div class="product_area-product">
-                    <img src="images/jordan2.webp" alt="">
-                    <div class="product_area-product-content">
-                        <h3>Jordan 1</h3>
-                        <p>$1340</p>
-                        <button>Add To Cart</button>
-                    </div>
-                </div>
-                <div class="product_area-product">
-                    <img src="images/jordan.webp" alt="">
-                    <div class="product_area-product-content">
-                        <h3>Nike Dunk</h3>
-                        <p>$1340</p>
-                        <button>Add To Cart</button>
-                    </div>
-                </div>
-                <div class="product_area-product">
-                    <img src="images/jordan.webp" alt="">
-                    <div class="product_area-product-content">
-                        <h3>Nike Dunk</h3>
-                        <p>$1340</p>
-                        <button>Add To Cart</button>
-                    </div>
-                </div>
-                <div class="product_area-product">
-                    <img src="images/jordan.webp" alt="">
-                    <div class="product_area-product-content">
-                        <h3>Nike Dunk</h3>
-                        <p>$1340</p>
-                        <button>Add To Cart</button>
-                    </div>
-                </div>
-                <div class="product_area-product">
-                    <img src="images/jordan.webp" alt="">
-                    <div class="product_area-product-content">
-                        <h3>Nike Dunk</h3>
-                        <p>$1340</p>
-                        <button>Add To Cart</button>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
 
-    <section class="card_area">
-        <h1>Cart</h1>
+    <section class="card">
+        <h2>Cart</h2>
+        <ul class="listcard"></ul>
+        <div class="checkOut">
+            <div class="total">0</div>
+            <div class="closeShopping">Close</div>
+        </div>
     </section>
 
     <section class="footer_area">
         <p>All Rights reserved - 2023 Razel</p>
     </section>
 
+    <script src="products.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
