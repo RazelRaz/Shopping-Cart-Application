@@ -228,32 +228,57 @@ section.card {
 }
 
 /* list in cart */
-.listCard li{
-    display: grid;
-    grid-template-columns: 100px repeat(3, 1fr);
-    color: #fff;
-    row-gap: 10px;
-}
-.listCard li div{
+.cart_item {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.cart_item div {
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
-.listCard li img{
-    width: 90%;
+
+.cart_item .item_info {
+    flex: 1;
+    padding: 10px;
+    gap: 4px;
 }
-.listCard li button{
-    background-color: #fff5;
-    border: none;
+
+.item_info img {
+    width: 50px;
 }
-.listCard .count{
+
+.item_info h4 {
+    color: #fff;
+    font-size: 12px;
+}
+
+.cart_item .unit_price {
+    flex: 1;
+    color: #fff;
+}
+
+.cart_item .units {
+    flex: 1;
+}
+
+.cart_item .units .btn{
+    background-color: #b53641;
+    width: 20px;
+    height: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.cart_item .units .number {
     margin: 0 10px;
+    color: #fff;
 }
-
-
-
-
-
 
 
 
