@@ -33,8 +33,9 @@ function renderProducts(){
 renderProducts();
 
 // cart array
-let cart = [];
-
+// let cart = [];
+let cart = JSON.parse(localStorage.getItem("CART")) || [];
+updateCart();
 
 // Add to Cart
 function addToCart(id) {
@@ -59,7 +60,8 @@ function updateCart(){
     renderCartItems();
     renderSubtotal();
     
-    
+    //save cart to local storage
+    localStorage.setItem("CART", JSON.stringify(cart));
 }
 
 // if(numberOfUnits > item.inStock){
