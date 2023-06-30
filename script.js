@@ -2,7 +2,9 @@ let body = document.querySelector('body');
 let openShopping = document.querySelector('.shopping');
 let closeShopping = document.querySelector('.closeShopping');
 let product_area_products = document.querySelector('.product_area-products');
-let cart_items = document.querySelector('.cart_items')
+let cart_items = document.querySelector('.cart_items');
+let subtotalEl = document.querySelector('.total');
+let quantity = document.querySelector('.quantity');
 
 // sidebar cart open and close
 openShopping.addEventListener('click', () => {
@@ -55,8 +57,25 @@ function addToCart(id) {
 // Update Cart
 function updateCart(){
     renderCartItems();
-    // renderSubtotal();
+    renderSubtotal();
     
+    
+}
+
+// if(numberOfUnits > item.inStock){
+//     alert('No more items in stock')
+//     console.log('No more items in stock');
+// }
+
+// Calculate and render subtotal
+function renderSubtotal(){
+    let totalPrice = 0, totalItems = 0;
+    cart.forEach((item) => {
+        totalPrice += item.price * item.numberOfUnits;
+        totalItems += item.numberOfUnits;
+    })
+    subtotalEl.innerHTML = `(${totalItems} Items) $${totalPrice.toFixed(2)}`;
+    quantity.innerHTML = `${totalItems}`
 }
 
 // render Cart Items
@@ -76,6 +95,9 @@ function renderCartItems(){
                     <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id} )">-</div>
                     <div class="number">${item.numberOfUnits}</div>
                     <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>
+                    <div class="recycleBin">
+                        <img src="images/recycle-bin.png">
+                    </div>
                 </div>
             </div>
         `
@@ -90,13 +112,17 @@ function changeNumberOfUnits(action, id){
             if(action === 'minus' && numberOfUnits > 1){
                 numberOfUnits--
             } else if (action === 'plus' && numberOfUnits < item.inStock){
+                
                 numberOfUnits++
             }
+            
         }
         return {
             ...item,
             numberOfUnits,
+            
         }
+
     })
     updateCart()
 }

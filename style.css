@@ -258,6 +258,7 @@ section.card {
 .cart_item .unit_price {
     flex: 1;
     color: #fff;
+    font-size: 15px;
 }
 
 .cart_item .units {
@@ -280,9 +281,17 @@ section.card {
     color: #fff;
 }
 
+.recycleBin {
+    margin: 0 6px;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 2px;
+    border-radius: 5px;
+}
 
-
-
+.recycleBin img {
+    width: 20px;
+}
 
 
 
