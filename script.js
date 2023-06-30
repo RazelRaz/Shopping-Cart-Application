@@ -95,7 +95,7 @@ function renderCartItems(){
                     <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id} )">-</div>
                     <div class="number">${item.numberOfUnits}</div>
                     <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>
-                    <div class="recycleBin">
+                    <div class="recycleBin" onclick="removeItemFromCart(${item.id})">
                         <img src="images/recycle-bin.png">
                     </div>
                 </div>
@@ -103,6 +103,13 @@ function renderCartItems(){
         `
     })
 }
+
+//remove Item from cart
+function removeItemFromCart(id){
+    cart = cart.filter((item) => item.id !== id)
+    updateCart()
+}
+
 
 //change number of units for an item
 function changeNumberOfUnits(action, id){
