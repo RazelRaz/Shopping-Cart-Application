@@ -5,6 +5,13 @@ let product_area_products = document.querySelector('.product_area-products');
 let cart_items = document.querySelector('.cart_items');
 let subtotalEl = document.querySelector('.total');
 let quantity = document.querySelector('.quantity');
+let trashIcon = document.querySelector('.trash');
+
+// remove all items from cart
+trashIcon.addEventListener('click', () => {
+    cart = []; // Empty the cart by assigning an empty array to it
+    updateCart(); // Call the updateCart function to reflect the changes in the UI
+});
 
 // sidebar cart open and close
 openShopping.addEventListener('click', () => {
@@ -49,7 +56,7 @@ function addToCart(id) {
             ...item,
             numberOfUnits: 1
         });
-        console.log(cart);
+        // console.log(cart);
     }
 
     updateCart();
@@ -123,6 +130,8 @@ function changeNumberOfUnits(action, id){
             } else if (action === 'plus' && numberOfUnits < item.inStock){
                 
                 numberOfUnits++
+            } else if (action === 'plus' && numberOfUnits >= item.inStock) {
+                alert('No more items in stock');
             }
             
         }

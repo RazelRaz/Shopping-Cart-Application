@@ -9,7 +9,7 @@ const products = [
     {
       id: 2,
       name: 'Nike Free RN Flyknit',
-      price: 99.99,
+      price: 199.99,
       image: 'images/jordan2.webp',
       inStock: 34,
     },
@@ -41,6 +41,7 @@ const products = [
       image: 'images/jordan6.webp',
       inStock: 9,
     },
+
   ];
   
 

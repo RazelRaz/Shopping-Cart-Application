@@ -202,6 +202,13 @@ section.card {
     color: #fff;
     font-weight: 400;
     padding: 10px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.card h2 img{
+    cursor: pointer;
 }
 
 .card .checkOut{
@@ -247,7 +254,7 @@ section.card {
 }
 
 .item_info img {
-    width: 50px;
+    width: 35px;
 }
 
 .item_info h4 {
@@ -293,6 +300,16 @@ section.card {
     width: 20px;
 }
 
+.card h2 span {
+    font-size: 10px;
+}
+
+.card img{
+    width: 30px;
+}
+
+
+
 
 
 
@@ -327,9 +344,16 @@ section.card {
         padding-top: 60px;
         grid-template-columns: repeat(2, 1fr);
     }
-    
-        
-
+    .card{
+        overflow-x: auto;
+        overflow-y: auto;
+        text-align:justify;
+    }
+    .active .card .checkOut {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
  }
 
 
@@ -348,6 +372,29 @@ section.card {
 
     .product_area-products {
         grid-template-columns: 1fr;
+    }
+
+    .card .checkOut {
+        grid-template-columns: 1fr;
+        
+    }
+
+    .card{
+        overflow-x: auto;
+        overflow-y: auto;
+        text-align:justify;
+    }
+    .cart_item {
+        flex-direction: column;
+    }
+
+    .active .card {
+        left: calc(100% - 360px);
+    }
+    .active .card .checkOut {
+        position: fixed;
+        bottom: 0;
+        right: 0;
     }
     
  }
